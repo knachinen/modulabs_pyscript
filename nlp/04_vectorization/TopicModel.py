@@ -1,4 +1,17 @@
+from utils.file_util import get_abs_path, check_file_exists, check_directory
+
+import pandas as pd
+import numpy as np
+import urllib
+
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+
 from sklearn.decomposition import LatentDirichletAllocation
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.decomposition import TruncatedSVD
 
 class BaseTopicModel:
 
@@ -71,7 +84,7 @@ class LDA(BaseTopicModel):
 
     def set_model(self, n_topics=10):
         self.model = LatentDirichletAllocation(
-            n_components=10,
+            n_components=n_topics,
             learning_method='online',
             random_state=777,
             max_iter=1)

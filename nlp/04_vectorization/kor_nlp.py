@@ -1,3 +1,7 @@
+from utils.file_util import get_abs_path, check_file_exists, check_directory
+
+import urllib
+
 from konlpy.tag import Okt
 from soynlp import DoublespaceLineCorpus
 from soynlp.word import WordExtractor
@@ -8,6 +12,11 @@ def okt_tokenize(kor_text):
     tokenizer = Okt()
     return tokenizer.morphs(kor_text)
 
+def get_word_score_table(corpus):
+    word_extractor = WordExtractor()
+    word_extractor.train(corpus)
+    word_score_table = word_extractor.extract()
+    return word_score_table
 
 def load_soynlp_tutorials():
     abs_path = get_abs_path()
@@ -36,11 +45,12 @@ def cohesion_probability(word_score_table, word):
     word_len = len(word)
     for i in range(word_len):
         text = word[:i+1]
+        fill = '_'
         try:
             score = word_score_table[text].cohesion_forward
-            print(f"{text:{word_len}}\t : {score}")
+            print(f"{text:{fill}<{word_len+2}}\t : {score}")
         except:
-            print(f"{text:{word_len}}\t : KeyError")
+            print(f"{text:{fill}<{word_len+2}}\t : KeyError")
 
 
 def branching_entropy(word_score_table, word):
