@@ -45,11 +45,9 @@ genre_name = [
     '애니메이션', '액션', '어드벤처', '전쟁', '코미디', '판타지']
 
 syweat = SynopsisWEAT()
-syweat.set_model(model)
-syweat.make_target(targets)
-syweat.make_excluded_words()
+syweat.process(model.wv, targets, attributes, genre_name)
+ax = plot_heatmap(syweat.matrix, genre_name, "heatmap_original.png")
+
 syweat.make_attributes(attributes, genre_name)
 syweat.make_matrix()
-
-ax = plot_heatmap(syweat.matrix, genre_name, "heatmap.png")
-
+ax = plot_heatmap(syweat.matrix, genre_name, "heatmap_removed_duplicates.png")
