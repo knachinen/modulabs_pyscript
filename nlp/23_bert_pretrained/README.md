@@ -105,7 +105,6 @@ Epoch 00010: mlm_lm_acc improved from 0.41591 to 0.41659, saving model to bert_p
 
 ### lower parameters - 1
 
-```markdown
 d_model=**128**,  
 n_head=4,  
 d_head=**16**,  
@@ -116,7 +115,6 @@ n_layer=**2**,
 n_seq=**128**,  
 n_vocab=0,  
 i_pad=0
-```
 
 ```
 Model: "model_5"
@@ -191,7 +189,6 @@ Epoch 00010: mlm_lm_acc improved from 0.36907 to 0.36916, saving model to /aiffe
 
 ![](bert_pretrained_8k_result_params.png)
 
-```markdown
 d_model=**128**,  
 n_head=4,  
 d_head=**32**,  
@@ -202,7 +199,6 @@ n_layer=**2**,
 n_seq=**128**,  
 n_vocab=0,  
 i_pad=0
-```
 
 ```
 Model: "model_6"
