@@ -23,6 +23,21 @@
 
 ![](bert_pretrained_8k_result.png)
 
+### default parameters
+
+```markdown
+d_model=256,  
+n_head=4,  
+d_head=64,  
+dropout=0.1,  
+d_ff=1024,  
+layernorm_epsilon=0.001,  
+n_layer=3,  
+n_seq=256,  
+n_vocab=0,  
+i_pad=0
+```
+
 ```
 Model: "model_1"
 __________________________________________________________________________________________________
@@ -88,16 +103,17 @@ Epoch 10/10
 Epoch 00010: mlm_lm_acc improved from 0.41591 to 0.41659, saving model to bert_prj_8k.hdf5
 ```
 
+### lower parameters - 1
 
 ```markdown
-d_model=128,  
+d_model=**128**,  
 n_head=4,  
-d_head=16,  
+d_head=**16**,  
 dropout=0.1,  
-d_ff=256,  
+d_ff=**256**,  
 layernorm_epsilon=0.001,  
-n_layer=2,  
-n_seq=128,  
+n_layer=**2**,  
+n_seq=**128**,  
 n_vocab=0,  
 i_pad=0
 ```
@@ -126,9 +142,6 @@ Non-trainable params: 0
 __________________________________________________________________________________________________
 train_steps: 20000
 
-In [27]:
-
-r.train()
 ```
 
 ```
@@ -174,17 +187,19 @@ Epoch 10/10
 Epoch 00010: mlm_lm_acc improved from 0.36907 to 0.36916, saving model to /aiffel/aiffel/data/bert_scriptrun_8k.hdf5
 ```
 
+### lower parameters - 2
 
+![](bert_pretrained_8k_result_params.png)
 
-```
-d_model=128,  
+```markdown
+d_model=**128**,  
 n_head=4,  
-d_head=32,  
+d_head=**32**,  
 dropout=0.1,  
-d_ff=512,  
+d_ff=**512**,  
 layernorm_epsilon=0.001,  
-n_layer=2,  
-n_seq=128,  
+n_layer=**2**,  
+n_seq=**128**,  
 n_vocab=0,  
 i_pad=0
 ```
@@ -244,10 +259,17 @@ Epoch 7/10
 
 Epoch 00007: mlm_lm_acc improved from 0.36779 to 0.36816, saving model to /aiffel/aiffel/data/bert_scriptrun_8k.hdf5
 Epoch 8/10
- 590/2000 [=======>......................] - ETA: 1:32 - loss: 12.9099 - nsp_loss: 0.5843 - mlm_loss: 12.3255 - nsp_acc: 0.6922 - mlm_lm_acc: 0.3684
+2000/2000 [==============================] - 132s 66ms/step - loss: 12.9078 - nsp_loss: 0.5848 - mlm_loss: 12.3230 - nsp_acc: 0.6912 - mlm_lm_acc: 0.3684
 
-In [ ]:
+Epoch 00008: mlm_lm_acc improved from 0.36816 to 0.36843, saving model to /aiffel/aiffel/data/bert_scriptrun_8k.hdf5
+Epoch 9/10
+2000/2000 [==============================] - 131s 66ms/step - loss: 12.8575 - nsp_loss: 0.5811 - mlm_loss: 12.2764 - nsp_acc: 0.6963 - mlm_lm_acc: 0.3686
 
+Epoch 00009: mlm_lm_acc improved from 0.36843 to 0.36863, saving model to /aiffel/aiffel/data/bert_scriptrun_8k.hdf5
+Epoch 10/10
+2000/2000 [==============================] - 131s 66ms/step - loss: 12.8372 - nsp_loss: 0.5796 - mlm_loss: 12.2576 - nsp_acc: 0.6990 - mlm_lm_acc: 0.3687
+
+Epoch 00010: mlm_lm_acc improved from 0.36863 to 0.36873, saving model to /aiffel/aiffel/data/bert_scriptrun_8k.hdf5
 ​
 ```
 
